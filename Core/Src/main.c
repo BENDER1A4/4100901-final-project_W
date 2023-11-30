@@ -79,7 +79,7 @@ int _write(int file, char *ptr, int len)
 }
 
 
-
+// Callback function for keypad interrupt
 void keypad_it_callback(uint16_t pin)
 {
 	keypad_event = pin;
@@ -128,8 +128,10 @@ int main(void)
   printf("Started\r\n");
   while (1)
   {
+	  // Run keypad to detect key presses
 	  uint8_t key_pressed = keypad_run(&keypad_event);
 	  if (key_pressed != KEY_PRESSED_NONE) {
+		  // Handle the key press in the lock sequence handler
 		  lock_sequence_handler(key_pressed);
 	  }
     /* USER CODE END WHILE */
