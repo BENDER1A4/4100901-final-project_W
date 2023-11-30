@@ -64,8 +64,8 @@ void GUI_Blocked(void)
     // Fill the screen with black color
     ssd1306_Fill(Black);
     // Set the cursor position and write "Blocked" text
-    ssd1306_SetCursor(20, 5);
-    ssd1306_WriteString("Blocked", Font_11x18, White);
+    ssd1306_SetCursor(7, 5);
+    ssd1306_WriteString("retry in 1min", Font_11x18, White);
     // Draw the locked icon
     ssd1306_DrawBitmap(50, 35, locked, 30, 30, White);
     // Update the OLED screen
