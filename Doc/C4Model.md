@@ -18,9 +18,9 @@ The STM32 runs a [controller-model-view](https://en.wikipedia.org/wiki/Model%E2%
 ## Code Diagram
 The diagram presents the fundamental architecture of a digital lock system, comprising three key components:
 
-1.Keypad: Allows user input, such as number sequences or commands to operate the lock.
-2.Lock: Serves as the system's core, responsible for managing the locking mechanism based on the inputs received.
-3.Display: Exhibits pertinent information to the user, including the lock's status and feedback messages for confirmation or errors.
+1. Keypad: Allows user input, such as number sequences or commands to operate the lock.
+2. Lock: Serves as the system's core, responsible for managing the locking mechanism based on the inputs received.
+3. Display: Exhibits pertinent information to the user, including the lock's status and feedback messages for confirmation or errors.
 
 Interactions between these components are unidirectional, where the keypad sends data to the lock, which in turn communicates the status to the display. This diagram offers a system context view, outlining the high-level relationships and interactions.
 ![context](code.png)
