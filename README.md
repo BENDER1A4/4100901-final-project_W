@@ -15,10 +15,10 @@ The example consists of a digital lock system that uses an STM32L4 as the main c
 * Use an ST-LINK to flash the firmware into the STM32.
 
 ## Functionality
-*The Keypad: The keypad is an input component used in the digital lock system. Its main function is to allow users to enter sequences of numbers or characters to authenticate and unlock the lock. The keypad is essential for user interaction with the system and the input of key data.
-*The Debug Console: The debugging console is an interface that provides detailed information about the internal operation of the system. It is an important tool for developers and technicians as it displays debugging messages, logs, and potential errors. It facilitates the identification and resolution of issues in the system.
-*The Internet Interface: The internet interface refers to the capability of the digital lock system to connect and communicate with the Internet. This interface enables the system to send and receive data over the network, which can be essential for functions such as time synchronization, firmware updates, notifications, and more.
-*The System Sends Metrics to the Internet: The system is configured to send metrics or relevant data over the Internet periodically, in this case, every 24 hours. This is achieved using an alarm from the integrated Real-Time Clock (RTC) in the system. The metrics may include information about the system's status, event logs, usage data, or other relevant information useful for remote management and monitoring.
+* The Keypad: The keypad is an input component used in the digital lock system. Its main function is to allow users to enter sequences of numbers or characters to authenticate and unlock the lock. The keypad is essential for user interaction with the system and the input of key data.
+* The Debug Console: The debugging console is an interface that provides detailed information about the internal operation of the system. It is an important tool for developers and technicians as it displays debugging messages, logs, and potential errors. It facilitates the identification and resolution of issues in the system.
+* The Internet Interface: The internet interface refers to the capability of the digital lock system to connect and communicate with the Internet. This interface enables the system to send and receive data over the network, which can be essential for functions such as time synchronization, firmware updates, notifications, and more.
+* The System Sends Metrics to the Internet: The system is configured to send metrics or relevant data over the Internet periodically, in this case, every 24 hours. This is achieved using an alarm from the integrated Real-Time Clock (RTC) in the system. The metrics may include information about the system's status, event logs, usage data, or other relevant information useful for remote management and monitoring.
 
 ## Contact info
 * Sam C - saacifuentesmu@unal.edu.co
