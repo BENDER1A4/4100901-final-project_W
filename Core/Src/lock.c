@@ -10,8 +10,8 @@
 
 #define MAX_PASSWORD 12
 
-
-uint8_t password[MAX_PASSWORD] = "1992";
+uint8_t failed_counter = 0;
+uint8_t password[MAX_PASSWORD] = "2001";
 
 uint8_t keypad_buffer[MAX_PASSWORD];
 ring_buffer_t keypad_rb;
@@ -91,7 +91,19 @@ static void lock_open_lock(void)
 {
 	if (lock_validate_password() != 0) {
 		GUI_unlocked();
+
 	} else {
+		failed_counter++;
+				if (failed_counter < 3) {
+					/* 3.2 -> Show "Failed" if the string is incorrect */
+					GUI_Fail();
+					HAL_Delay(3*1000);
+				} else {
+					/* 4 -> Show "Blocked" if the string is incorrect 3 times */
+					GUI_Blocked();
+					failed_counter = 0;
+					HAL_Delay(10*1000);
+				}
 		GUI_locked();
 	}
 }
