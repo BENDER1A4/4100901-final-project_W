@@ -107,12 +107,25 @@ static void lock_update_password(void)
     }
 }
 
+// Función para encender el LED.
+void LED_SetHigh(void) {
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // Enciende el LED en PA5.
+}
+
+// Función para apagar el LED.
+void LED_SetLow(void) {
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // Apaga el LED en PA5.
+}
+
 // Function to handle the process of opening the lock
 static void lock_open_lock(void)
 {
     if (lock_validate_password() != 0) {
         // If password is valid, display "Unlocked" on the GUI
         GUI_unlocked();
+
+        // Enciende el LED en PA5 para indicar que está desbloqueado.
+        LED_SetHigh();
     } else {
         failed_counter++;
 
@@ -126,6 +139,9 @@ static void lock_open_lock(void)
             failed_counter = 0;
             HAL_Delay(60 * 1000);
         }
+
+        // Apaga el LED en PA5 para indicar que está bloqueado o falló la autenticación.
+        LED_SetLow();
 
         // After the delay, display "Locked" on the GUI
         GUI_locked();
