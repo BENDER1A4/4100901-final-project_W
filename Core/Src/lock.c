@@ -135,7 +135,7 @@ static void lock_open_lock(void)
             HAL_Delay(3 * 1000);
         } else {
             // If the password is incorrect 3 times, show "Blocked" and wait for 10 seconds
-            GUI_Blocked();
+            GUI_Retry();
             failed_counter = 0;
             HAL_Delay(60 * 1000);
         }
