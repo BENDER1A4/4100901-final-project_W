@@ -59,7 +59,7 @@ void GUI_Fail(void)
 }
 
 // Function to display the blocked screen
-void GUI_Blocked(void)
+void GUI_Retry(void)
 {
     // Fill the screen with black color
     ssd1306_Fill(Black);
